@@ -1,0 +1,34 @@
+{
+	"name": "edx/laravel-mjml",
+	"authors": [
+		{
+			"name": "Malico",
+			"email": "hi@malico.me"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Edx\\MJML\\": "src/"
+		},
+		"files": [
+			"src/Support/helpers.php"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Edx\\MJML\\MJMLServiceProvider"
+			]
+		}
+	},
+	"require-dev": {
+		"orchestra/testbench": "^6.22",
+		"illuminate/support": "*",
+		"illuminate/view": "*"
+	}
+}
