@@ -67,3 +67,15 @@ class SomeEmail extends Mailable
 
 This is inspired by (https://github.com/asahasrabuddhe/laravel-mjml), but more optimized.
 Compiles the mjml of view compiled file.
+
+Also there's a helper function to render the mjml directly.
+
+```php
+<?php
+
+class DummyClass {
+    public function something(){
+        return mjml('view.name', $data);
+    }
+}
+```
