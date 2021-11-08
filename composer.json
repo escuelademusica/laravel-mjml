@@ -22,7 +22,7 @@
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Edx\\MJML\\MJMLServiceProvider"
+				"Edx\\MJML\\MjmlServiceProvider"
 			]
 		}
 	},
