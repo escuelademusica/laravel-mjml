@@ -37,7 +37,7 @@ class MjmlEngine extends CompilerEngine
         if ($this->compiler->isExpired($path)) {
             $this->compiler->compile($path);
 
-            $this->compiledMjml($path);
+            $this->compileMjml($path);
         }
 
         // Once we have the path to the compiled file, we will evaluate the paths with
@@ -50,7 +50,7 @@ class MjmlEngine extends CompilerEngine
         return $results;
     }
 
-    protected function compiledMjml($path)
+    public function compileMjml($path)
     {
         $this->mjmlCompiledPath = $this->compiler->getCompiledPath($path);
 
@@ -70,6 +70,6 @@ class MjmlEngine extends CompilerEngine
      */
     public function detectBinaryPath()
     {
-        return config('mjml.auto_detect_path') ? config('mjml.path_to_binary') : base_path('node_modules/.bin/mjml');
+        return config('mjml.path_to_binary') ?? base_path('node_modules/.bin/mjml');
     }
 }

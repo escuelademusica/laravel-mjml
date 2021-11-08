@@ -1,11 +1,10 @@
 <?php
 
-namespace Tests\Mail;
+namespace Tests;
 
 use Edx\MJML\Mail\Mailable;
 use Edx\MJML\Support\InteractsWithMjml;
 use Illuminate\Mail\Mailable as IlluminateMailable;
-use Tests\TestCase;
 
  /*
   * Check tests/resouces/test.blade.php to see test file.

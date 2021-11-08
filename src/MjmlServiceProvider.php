@@ -10,6 +10,7 @@ class MjmlServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerEngineResolver();
+        $this->registerConfig();
     }
 
     protected function registerEngineResolver()
@@ -20,6 +21,14 @@ class MjmlServiceProvider extends ServiceProvider
                 'mjml.blade',
                 fn () => new MjmlEngine($this->app['blade.compiler'], $this->app['files'])
             )
+        );
+    }
+
+    protected function registerConfig()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/mjml.php',
+            'mjml'
         );
     }
 }
