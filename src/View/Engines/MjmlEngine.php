@@ -1,6 +1,6 @@
 <?php
 
-namespace Edx\MJML\View\Engines;
+namespace EscuelaDeMusica\MJML\View\Engines;
 
 use Illuminate\View\Engines\CompilerEngine;
 use Symfony\Component\Process\Exception\ProcessFailedException;

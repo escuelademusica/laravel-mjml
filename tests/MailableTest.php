@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Edx\MJML\Mail\Mailable;
-use Edx\MJML\Support\InteractsWithMjml;
+use EscuelaDeMusica\MJML\Mail\Mailable;
+use EscuelaDeMusica\MJML\Support\InteractsWithMjml;
 use Illuminate\Mail\Mailable as IlluminateMailable;
 
  /*

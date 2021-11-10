@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Edx\MJML\Mjml;
+use EscuelaDeMusica\MJML\Mjml;
 
  /*
   * Check tests/resouces/test.blade.php to see test file.

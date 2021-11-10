@@ -1,8 +1,8 @@
 <?php
 
-namespace Edx\MJML;
+namespace EscuelaDeMusica\MJML;
 
-use Edx\MJML\View\Engines\MjmlEngine;
+use EscuelaDeMusica\MJML\View\Engines\MjmlEngine;
 use Illuminate\Support\ServiceProvider;
 
 class MjmlServiceProvider extends ServiceProvider

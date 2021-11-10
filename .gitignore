@@ -12,3 +12,4 @@ composer.lock
 phpunit.xml
 schema-directives.graphql
 testbench.yaml
+package-lock.json

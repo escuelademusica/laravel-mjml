@@ -1,14 +1,14 @@
 {
-	"name": "edx/laravel-mjml",
+	"name": "escuelademusica/laravel-mjml",
 	"authors": [
 		{
 			"name": "Malico",
-			"email": "hi@malico.me"
+			"email": "malico@escuelademusica.com"
 		}
 	],
 	"autoload": {
 		"psr-4": {
-			"Edx\\MJML\\": "src/"
+			"EscuelaDeMusica\\MJML\\": "src/"
 		},
 		"files": [
 			"src/Support/helpers.php"
@@ -22,12 +22,14 @@
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Edx\\MJML\\MjmlServiceProvider"
+				"EscuelaDeMusica\\MJML\\MjmlServiceProvider"
 			]
 		}
 	},
 	"require-dev": {
-		"orchestra/testbench": "^6.22",
+		"orchestra/testbench": "^6.22"
+	},
+	"require": {
 		"illuminate/support": "*",
 		"illuminate/view": "*"
 	},
@@ -36,5 +38,6 @@
 			"tests/",
 			"*.xml"
 		]
-	}
+	},
+	"license": "MIT"
 }

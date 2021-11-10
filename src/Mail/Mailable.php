@@ -1,8 +1,8 @@
 <?php
 
-namespace Edx\MJML\Mail;
+namespace EscuelaDeMusica\MJML\Mail;
 
-use Edx\MJML\Support\InteractsWithMjml;
+use EscuelaDeMusica\MJML\Support\InteractsWithMjml;
 use Illuminate\Mail\Mailable as IlluminateMailable;
 
 class Mailable extends IlluminateMailable

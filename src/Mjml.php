@@ -1,6 +1,6 @@
 <?php
 
-namespace Edx\MJML;
+namespace EscuelaDeMusica\MJML;
 
 use Illuminate\View\Factory;
 use Illuminate\View\View;

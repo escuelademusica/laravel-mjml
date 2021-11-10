@@ -1,6 +1,6 @@
 <?php
 
-namespace Edx\MJML\Support;
+namespace EscuelaDeMusica\MJML\Support;
 
 use Illuminate\Container\Container;
 

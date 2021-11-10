@@ -1,6 +1,6 @@
 <?php
 
-use Edx\MJML\Mjml;
+use EscuelaDeMusica\MJML\Mjml;
 
 if (! function_exists('mjml')) {
     function mjml(string $mjml, ?array $data = null): string
