@@ -4,7 +4,12 @@
 
 `composer require escuelademusica/laravel-mjml`
 
+You neeed install [MJML](https://mjml.io/) via npm.
+
 `npm install --save mjml`
+
+You can customize the location of the MJML files by adding the following to your `.env` file:
+`MJML_BINARY_PATH=/path/to/mjml/bin/mjml`
 
 ### Usage
 

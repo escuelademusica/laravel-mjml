@@ -16,7 +16,7 @@ class TestCase extends TestbenchTestCase
 
         View::addLocation(__DIR__ . '/resources/views');
         Artisan::call('view:clear');
-        Config::set(['mjml.path_to_binary' => __DIR__ . '/../node_modules/.bin/mjml']);
+        Config::set(['mjml.binary_path' => __DIR__ . '/../node_modules/.bin/mjml']);
     }
 
     protected function getPackageProviders($app)

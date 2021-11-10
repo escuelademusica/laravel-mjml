@@ -7,5 +7,5 @@ return [
      *
      * null|bool|string
      */
-    'path_to_binary' => null,
+    'binary_path' => env('MJML_BINARY_PATH', null),
 ];

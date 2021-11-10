@@ -70,6 +70,6 @@ class MjmlEngine extends CompilerEngine
      */
     public function detectBinaryPath()
     {
-        return config('mjml.path_to_binary') ?? base_path('node_modules/.bin/mjml');
+        return config('mjml.binary_path') ?? base_path('node_modules/.bin/mjml');
     }
 }
