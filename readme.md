@@ -2,7 +2,7 @@
 
 ### Installation
 
-`composer require edx/laravel-mjml`
+`composer require escuelademusica/laravel-mjml`
 
 `npm install --save mjml`
 
@@ -17,7 +17,7 @@ There are two ways to use this package.
 
 namespace App\Mail;
 
-use Edx\MJML\Mail\Mailable;
+use EscuelaDeMusica\MJML\Mail\Mailable;
 
 class CustomMailable extends Mailable
 {
@@ -45,7 +45,7 @@ This works the same way as the CustomMailable, but you don't need to extend the 
 namespace App\Mail;
 
 use Illuminate\Mail\Mailable;
-use Edx\MJML\Support\InteractsWithMjml;
+use EscuelaDeMusica\MJML\Support\InteractsWithMjml;
 
 class SomeEmail extends Mailable
 {
