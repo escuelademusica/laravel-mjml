@@ -32,14 +32,11 @@ trait InteractsWithMjml
     public function renderMjml()
     {
         if ($this instanceof Mailable) {
-            return $this->withLocale(
-                $this->locale,
-                function () {
-                    Container::getInstance()->call([$this, 'build']);
+            return $this->withLocale($this->locale, function () {
+                Container::getInstance()->call([$this, 'build']);
 
-                    return \mjml($this->mjml, $this->viewData);
-                }
-            );
+                return \mjml($this->mjml, $this->viewData);
+            });
         } else {
             return \mjml($this->mjml, $this->viewData);
         }
