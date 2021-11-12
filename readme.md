@@ -68,6 +68,28 @@ class SomeEmail extends Mailable
 }
 ```
 
+For laravel notifications in your `toMail` method, you will normally return an instance of a MailMessage. The package extends that class and adds the mjml functions to it. To use mjml mails for notifications, you will need to extend the MjmlMessage provided by the package.
+
+```php
+<?php
+
+namespace App\Notifications;
+
+use EscuelaDeMusica\MJML\Mail\Messages\MjmlMessage;
+
+class SomeNotification extends Notification
+{
+
+
+    public function toMail($notifiable)
+    {
+        return (new MjmlMessage)
+            ->subject('Notification Subject')
+            ->mjml('notification.name');
+    }
+}
+```
+
 ## How it works.
 
 This is inspired by (https://github.com/asahasrabuddhe/laravel-mjml), but more optimized.
