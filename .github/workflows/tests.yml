@@ -29,9 +29,7 @@ jobs:
         key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
     - name: Install NPM packages
       if: steps.node_modules-cache.outputs.cache-hit != 'true'
-      run: npm ci
-    - name: Build frontend
-      run: npm run development
+      run: npm install
     - name: Install PHP versions
       uses: shivammathur/setup-php@v2
       with:
