@@ -3,6 +3,7 @@
 namespace EscuelaDeMusica\MJML\Support;
 
 use Illuminate\Container\Container;
+use Illuminate\Mail\Mailable;
 
 trait InteractsWithMjml
 {
@@ -11,7 +12,7 @@ trait InteractsWithMjml
      *
      * @var string
      */
-    protected $mjml;
+    public $mjml;
 
     /**
      * Set the MJML template for the message.
@@ -30,10 +31,14 @@ trait InteractsWithMjml
 
     public function renderMjml()
     {
-        return $this->withLocale($this->locale, function () {
-            Container::getInstance()->call([$this, 'build']);
+        if ($this instanceof Mailable) {
+            return $this->withLocale($this->locale, function () {
+                Container::getInstance()->call([$this, 'build']);
 
+                return \mjml($this->mjml, $this->viewData);
+            });
+        } else {
             return \mjml($this->mjml, $this->viewData);
-        });
+        }
     }
 }
