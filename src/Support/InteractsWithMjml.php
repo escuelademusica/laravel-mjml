@@ -4,6 +4,7 @@ namespace EscuelaDeMusica\MJML\Support;
 
 use Illuminate\Container\Container;
 use Illuminate\Mail\Mailable;
+use Illuminate\Support\HtmlString;
 
 trait InteractsWithMjml
 {
@@ -27,6 +28,13 @@ trait InteractsWithMjml
         $this->viewData = array_merge($this->viewData, $data);
 
         return $this;
+    }
+
+    public function buildMjmlView()
+    {
+        return [
+            'html' => new HtmlString(mjml($this->mjml, $this->viewData)),
+        ];
     }
 
     public function renderMjml()
