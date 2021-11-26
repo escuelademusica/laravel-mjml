@@ -9,6 +9,15 @@ class Mailable extends IlluminateMailable
 {
     use InteractsWithMjml;
 
+    public function buildView()
+    {
+        if (isset($this->mjml)) {
+            return $this->buildMjmlView();
+        }
+
+        return parent::buildView();
+    }
+
     /**
      * Render the mailable into a view.
      *

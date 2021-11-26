@@ -56,6 +56,15 @@ class SomeEmail extends Mailable
 {
     use InteractsWithMjml;
 
+    public function buildView()
+    {
+        if (isset($this->mjml)) {
+            return $this->buildMjmlView();
+        }
+
+        return parent::buildView();
+    }
+
     public function build ()
     {
         return $this->mjml('view.name');
@@ -79,8 +88,6 @@ use EscuelaDeMusica\MJML\Mail\Messages\MjmlMessage;
 
 class SomeNotification extends Notification
 {
-
-
     public function toMail($notifiable)
     {
         return (new MjmlMessage)
