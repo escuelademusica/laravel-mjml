@@ -2,7 +2,7 @@
 
 namespace EscuelaDeMusica\MJML\Mail;
 
-use EscuelaDeMusica\MJML\Support\InteractsWithMjml;
+use EscuelaDeMusica\MJML\InteractsWithMjml;
 use Illuminate\Mail\Mailable as IlluminateMailable;
 
 class Mailable extends IlluminateMailable

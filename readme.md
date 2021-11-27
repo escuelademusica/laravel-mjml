@@ -4,7 +4,7 @@
 
 `composer require escuelademusica/laravel-mjml`
 
-You neeed install [MJML](https://mjml.io/) via npm.
+You need install [MJML](https://mjml.io/) via npm.
 
 `npm install --save mjml`
 
@@ -41,7 +41,8 @@ class CustomMailable extends Mailable
 
 #### 2. Use the InteractsWithMjml Trait with laravel mailable
 
-This works the same way as the CustomMailable, but you don't need to extend the mailable. You can use the trait with any laravel mailable, but remember to edit the render function to look like this:
+This works the same way as the CustomMailable, but you don't need to extend the mailable. You can use the trait with any
+laravel mailable, but remember to edit the render function to look like this:
 
 ```php
 
@@ -50,7 +51,7 @@ This works the same way as the CustomMailable, but you don't need to extend the 
 namespace App\Mail;
 
 use Illuminate\Mail\Mailable;
-use EscuelaDeMusica\MJML\Support\InteractsWithMjml;
+use EscuelaDeMusica\MJML\InteractsWithMjml;
 
 class SomeEmail extends Mailable
 {
@@ -77,7 +78,9 @@ class SomeEmail extends Mailable
 }
 ```
 
-For laravel notifications in your `toMail` method, you will normally return an instance of a MailMessage. The package extends that class and adds the mjml functions to it. To use mjml mails for notifications, you will need to extend the MjmlMessage provided by the package.
+For laravel notifications in your `toMail` method, you will normally return an instance of a MailMessage. The package
+extends that class and adds the mjml functions to it. To use mjml mails for notifications, you will need to extend the
+MjmlMessage provided by the package.
 
 ```php
 <?php
@@ -99,10 +102,10 @@ class SomeNotification extends Notification
 
 ## How it works.
 
-This is inspired by (https://github.com/asahasrabuddhe/laravel-mjml), but more optimized.
-Compiles the mjml of view compiled file.
+This is inspired by (https://github.com/asahasrabuddhe/laravel-mjml), but more optimized. Compiles the mjml of view
+compiled file.
 
-Also there's a helper function to render the mjml directly.
+Also, there's a helper function to render the mjml directly.
 
 ```php
 <?php

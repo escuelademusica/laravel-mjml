@@ -9,10 +9,7 @@
 	"autoload": {
 		"psr-4": {
 			"EscuelaDeMusica\\MJML\\": "src/"
-		},
-		"files": [
-			"src/Support/helpers.php"
-		]
+		}
 	},
 	"autoload-dev": {
 		"psr-4": {
