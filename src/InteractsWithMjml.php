@@ -10,15 +10,11 @@ trait InteractsWithMjml
 {
     /**
      * The MJML template for the message (if applicable).
-     *
-     * @var string
      */
     public string $mjml;
 
     /**
      * Set the MJML template for the message.
-     *
-     * @param string $view
      *
      * @retur self
      */
@@ -32,8 +28,6 @@ trait InteractsWithMjml
 
     /**
      * Build mjml message.
-     *
-     * @return array
      */
     public function buildMjmlView(): array
     {
@@ -44,8 +38,6 @@ trait InteractsWithMjml
 
     /**
      * Render the MJML Mailable.
-     *
-     * @return string
      */
     public function renderMjml(): string
     {
@@ -62,11 +54,9 @@ trait InteractsWithMjml
 
     /**
      * Render the Mailable view file.
-     *
-     * @return string
      */
     protected function renderMjmlView(): string
     {
-        return app(Mjml::class)->render($this->mjml, $this->viewData);
+        return app(Mjml::class, ['view' => $this->mjml, 'data' => $this->viewData])->render();
     }
 }

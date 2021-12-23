@@ -21,7 +21,7 @@ class MjmlTest extends TestCase
     {
         $this->assertStringContainsString(
             '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">',
-            app(Mjml::class)->render('test'),
+            app(Mjml::class, ['view' => 'test'])->render(),
         );
     }
 
@@ -30,7 +30,16 @@ class MjmlTest extends TestCase
     {
         $this->assertStringContainsString(
             'John Doe',
-            app(Mjml::class)->render('test', ['name' => 'John Doe']),
+            app(Mjml::class, ['view' => 'test', 'data' => ['name' => 'John Doe']])->render(),
+        );
+    }
+
+    /** @test */
+    public function renders_template_that_includes_a_another_mjml_view()
+    {
+        $this->assertStringContainsString(
+            'Welcome to MJML',
+            app(Mjml::class, ['view' => 'test-include'])->render(),
         );
     }
 }
