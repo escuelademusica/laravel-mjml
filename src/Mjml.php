@@ -8,15 +8,39 @@ use Illuminate\View\ViewName;
 
 class Mjml
 {
-    public function render(string $view, array $data = [])
+    /**
+     * Path to the view file.
+     */
+    public string $path;
+
+    /**
+     * View instance.
+     */
+    public $viewInstance;
+
+    public function __construct(public Factory $factory, public string $view, public array $data = [])
     {
-        $factory = app(Factory::class);
+        $this->factory = $factory;
+        $this->view = $view;
+        $this->data = $data;
+        $this->path = $this->factory->getFinder()->find(ViewName::normalize($view));
 
-        $path = $factory->getFinder()->find(
-            $view = ViewName::normalize($view)
+        $this->createView();
+    }
+
+    protected function createView()
+    {
+        $this->viewInstance = new View(
+            $this->factory,
+            $this->factory->getEngineResolver()->resolve('mjml.blade'),
+            $this->view,
+            $this->path,
+            $this->data
         );
+    }
 
-        return (new View($factory, $factory->getEngineResolver()->resolve('mjml.blade'), $view, $path, $data))
-            ->render();
+    public function render()
+    {
+        return $this->viewInstance->render();
     }
 }

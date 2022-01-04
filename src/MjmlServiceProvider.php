@@ -13,6 +13,11 @@ class MjmlServiceProvider extends ServiceProvider
         $this->registerConfig();
     }
 
+    public function boot()
+    {
+        $this->bootDirectives();
+    }
+
     protected function registerEngineResolver()
     {
         $this->app->resolving(
@@ -21,6 +26,17 @@ class MjmlServiceProvider extends ServiceProvider
                 'mjml.blade',
                 fn () => new MjmlEngine($this->app['blade.compiler'], $this->app['files'])
             )
+        );
+
+        $this->app['view']->addExtension('mjml.blade.php', 'mjmlblade');
+        $this->app['view']->addExtension('mjml', 'mjml');
+    }
+
+    public function bootDirectives()
+    {
+        $this->app['blade.compiler']->directive(
+            'mj_include',
+            fn ($view, $data = []) => app(MjmlDirective::class)->include($view, $data)
         );
     }
 

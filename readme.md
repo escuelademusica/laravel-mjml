@@ -102,17 +102,13 @@ class SomeNotification extends Notification
 
 ## How it works.
 
+To include other files in your mjml, you can use the `mj_include` directive. The directive takes the path to the file, and the mjml-include type.
+
+```blade
+@mjml('view.name');
+```
+
 This is inspired by (https://github.com/asahasrabuddhe/laravel-mjml), but more optimized. Compiles the mjml of view
 compiled file.
 
-Also, there's a helper function to render the mjml directly.
-
-```php
-<?php
-
-class DummyClass {
-    public function something(){
-        return mjml('view.name', $data);
-    }
-}
-```
+Also

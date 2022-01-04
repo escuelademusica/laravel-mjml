@@ -23,8 +23,9 @@ class MailableTest extends TestCase
     public function can_render_a_mjml_template()
     {
         $mailable = new TestMailable();
+
         $this->assertEquals(
-            <<<'EOT'
+<<<EOT
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -119,6 +120,8 @@ class MailableTest extends TestCase
       }
     }
 
+  </style>
+  <style type="text/css">
   </style>
 </head>
 
