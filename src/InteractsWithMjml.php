@@ -2,6 +2,7 @@
 
 namespace EscuelaDeMusica\MJML;
 
+use EscuelaDeMusica\MJML\Support\TextParser;
 use Illuminate\Container\Container;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\HtmlString;
@@ -31,8 +32,11 @@ trait InteractsWithMjml
      */
     public function buildMjmlView(): array
     {
+        $htmlContent = $this->renderMjmlView();
+
         return [
-            'html' => new HtmlString($this->renderMjmlView()),
+            'html' => new HtmlString($htmlContent),
+            'text' => new HtmlString(TextParser::clean($htmlContent)),
         ];
     }
 
