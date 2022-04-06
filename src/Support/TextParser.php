@@ -59,7 +59,7 @@ class TextParser
      */
     protected static function plainTextMethodForNode(DOMNode $node): string
     {
-        return sprintf('plainTextFor%sNode', (string) Str::of($node->nodeName)->studly());
+        return sprintf('plainTextFor%sNode', (string) Str::studly($node->nodeName));
     }
 
     /**
