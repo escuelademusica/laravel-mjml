@@ -11,10 +11,6 @@ class MjmlMessage extends MailMessage
 
     public function render(): string
     {
-        if (isset($this->mjml)) {
-            return $this->renderMjml();
-        }
-
-        return parent::render();
+        return $this->renderMjml();
     }
 }

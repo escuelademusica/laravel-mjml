@@ -10,18 +10,13 @@ use Illuminate\Support\HtmlString;
 trait InteractsWithMjml
 {
     /**
-     * The MJML template for the message (if applicable).
-     */
-    public string $mjml;
-
-    /**
      * Set the MJML template for the message.
      *
      * @retur self
      */
     public function mjml(string $view, array $data = []): self
     {
-        $this->mjml = $view;
+        $this->view = $view;
         $this->viewData = array_merge($this->viewData, $data);
 
         return $this;
@@ -61,6 +56,6 @@ trait InteractsWithMjml
      */
     protected function renderMjmlView(): string
     {
-        return app(Mjml::class, ['view' => $this->mjml, 'data' => $this->viewData])->render();
+        return app(Mjml::class, ['view' => $this->view, 'data' => $this->viewData])->render();
     }
 }
